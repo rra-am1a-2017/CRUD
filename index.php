@@ -44,11 +44,30 @@
       // Associatief array
       $user = array("voornaam"      => "Arjan",
                     "tussenvoegsel" => "de", 
-                    "achternaam"    => "Ruijter", "Prins Hendrikstraat", 17, "Castricum", '1901CB', 49);
+                    "achternaam"    => "Ruijter",
+                    "straatnaam"    => "Prins Hendrikstraat",
+                    "huisnummer"    => 17,
+                    "woonplaats"    => "Castricum", 
+                    "postcode"      => '1901CB',
+                    "leeftijd"      => 49);
 
-      $zin = "Mijn naam is: " . $user['voornaam'] . " " . $user['tussenvoegsel'] . " " . $user['achternaam'] . "<br>";
+      $user1 = array("voornaam"      => "Bert",
+                     "tussenvoegsel" => "de", 
+                     "achternaam"    => "Beer",
+                     "straatnaam"    => "Julian van Stolberstraat",
+                     "huisnummer"    => 12,
+                     "woonplaats"    => "Uitgeest", 
+                     "postcode"      => '1051 XM',
+                     "leeftijd"      => 82);
 
-      echo $zin;
+      echo "Mijn naam is: " . $user['voornaam'] . " " . $user['tussenvoegsel'] . " " . $user['achternaam'] . "<br>";
+      echo "Ik woon op de " . $user['straatnaam'] . " " . $user['huisnummer'] . "<br>";
+      echo "Postcode en stad: " . $user['postcode'] . " " . $user['woonplaats'] . "<br>";
+      echo "Mijn leeftijd is: " . $user['leeftijd'];
+
+      echo "<hr>";
+
+
       /* 
          Maak een array genaamd user waarin je de volgende data zet.
          voornaam, tussenvoegsel, achternaam, straatnaam, huisnummer, stad, postcode, leeftijd
