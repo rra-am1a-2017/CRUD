@@ -21,7 +21,7 @@
       // Dit is
       // een variabele met daarin een geheel
       // getal (integer)
-      $leeftijd = 17;
+      $leeftijd = 17.5;
       $nieuwe_leeftijd = $leeftijd + 25;
 
       $fruit0 = "mango";
@@ -29,8 +29,8 @@
       $fruit2 = "banaan";
 
       /* Hieronder staat een 
-         een array. */
-      $fruit = array("appel", "citroen", "sinaasappel");
+         een indexed array. */
+      $fruit = array("sinaasappel", "appel", "citroen");
 
       echo "Mijn voornaam is: " . $voornaam . "<br>"; 
       echo "Ik woon in op de: " . $adres . "<br>";
@@ -51,6 +51,8 @@
                     "postcode"      => '1901CB',
                     "leeftijd"      => 49);
 
+      var_dump($user);
+
       $user1 = array("voornaam"      => "Bert",
                      "tussenvoegsel" => "de", 
                      "achternaam"    => "Beer",
@@ -67,7 +69,23 @@
 
       echo "<hr>";
 
+      echo "Mijn naam is: " . $user1['voornaam'] . " " . $user1['tussenvoegsel'] . " " . $user1['achternaam'] . "<br>";
+      echo "Ik woon op de " . $user1['straatnaam'] . " " . $user1['huisnummer'] . "<br>";
+      echo "Postcode en stad: " . $user1['postcode'] . " " . $user1['woonplaats'] . "<br>";
+      echo "Mijn leeftijd is: " . $user1['leeftijd'];
 
+
+
+      /* Hieronder staat een boolean variabele. 
+         Een boolean variabele is een variabele die precies twee waarden kan aannemen.
+         true / false
+         1 / 0 */
+      $schrijf_naar_scherm = true;
+
+      if ($schrijf_naar_scherm) {
+        echo "<hr>";
+        echo "Ik ben een zin die afhankelijk van de waarde van de boolean variabele op het scherm wordt afgebeeld";
+      }
       /* 
          Maak een array genaamd user waarin je de volgende data zet.
          voornaam, tussenvoegsel, achternaam, straatnaam, huisnummer, stad, postcode, leeftijd
@@ -75,9 +93,20 @@
       */
     ?>
 
+    <hr>
+    <?php 
+      if (!empty($_POST)) {
+        var_dump($_POST);
+        echo "Mijn net ingevulde voornaam is: " . $_POST["voornaam"] ."<br>";
+      }
+    ?>
+    <h3>Vul uw gegevens in:</h3>
 
-
-
+    <form method="post">
+      voornaam: <input type="text" name="voornaam">
+      wachtwoord: <input type="password" name="wachtwoord">
+      <input type="submit" value="Drukken maar!">    
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
