@@ -94,23 +94,43 @@
     ?>
 
     <hr>
-    <?php     
+    <?php
+      // $_POST leeg => sla code over
+      // $_POST gevuld met waarden uit het formulier => voor de code uit tussen curly brackets.
       if (!empty($_POST)) {
-        var_dump($_POST);
-        echo "Mijn net ingevulde voornaam is: " . $_POST["voornaam"] . " " . $_POST["tussenvoegsel"] . " " . $_POST["achternaam"] . "<br>";
-        echo "Mijn leeftijd is: " . $_POST["leeftijd"];
+          var_dump($_POST);
+          echo "Mijn voornaam is: " . $_POST["voornaam"] . " " . $_POST["tussenvoegsel"] . " " . $_POST["achternaam"] . "<br>";
+          echo "Mijn password is: " . $_POST["wachtwoord"];
       }
     ?>
-    <h3>Vul uw gegevens in:</h3>
-
+    
     <form method="post" action="./data.php">
-      voornaam: <input type="text" name="voornaam" required>
-      tussenvoegsel: <input type="text" name="tussenvoegsel" required>
-      achternaam: <input type="text" name="achternaam" required>
-      leeftijd: <input type="number" min=0 max=123 name="leeftijd" required>
-      wachtwoord: <input type="password" name="wachtwoord">
-      <input type="submit" value="Drukken maar!">    
+      voornaam: <input type="text" name="voornaam">
+      tussenvoegsel: <input type="text" name="tussenvoegsel">
+      achternaam: <input type="text" name="achternaam">
+      haarkleur <select name="haarkleur">
+                  <option value="blond">blond haar</option>
+                  <option value="grijs">grijs haar</option>
+                  <option value="bruin">bruin haar</option>
+                </select>
+      wachtwoord: <input type="password" name="wachtwoord">     
+      <input type="submit">
     </form>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
   
 
