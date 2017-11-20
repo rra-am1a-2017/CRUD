@@ -14,7 +14,7 @@
   $password = "";
   $database_name = "am1a_2017_blok2_crud";
   
-  
+  // Met deze functie maken we contact met de mysql server
   $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
 
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
@@ -33,6 +33,6 @@
 
   //header("Location: ./index.php");
 
-  header("refresh:10; url=./index.php");
+  header("Refresh:4; url=./index.php");
   
 ?>
