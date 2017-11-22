@@ -1,10 +1,10 @@
 <?php
-  echo "Hoi";
-  var_dump($_POST);
-  echo "Mijn voornaam is: " . $_POST["voornaam"] . " " . $_POST["tussenvoegsel"] . " " . $_POST["achternaam"] . "<br>";
-  echo "Mijn password is: " . $_POST["wachtwoord"] . "<br>";
-  echo "Mijn haarkleur is: " .$_POST["haarkleur"] . "<br>"; 
-  echo "<hr>";
+  // echo "Hoi";
+  // var_dump($_POST);
+  // echo "Mijn voornaam is: " . $_POST["voornaam"] . " " . $_POST["tussenvoegsel"] . " " . $_POST["achternaam"] . "<br>";
+  // echo "Mijn password is: " . $_POST["wachtwoord"] . "<br>";
+  // echo "Mijn haarkleur is: " .$_POST["haarkleur"] . "<br>"; 
+  // echo "<hr>";
 
   // Echo onderstaande query naar het browserscherm 
 
@@ -19,20 +19,23 @@
 
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
   $sql = "INSERT INTO `users` (`id`,
-                             `firstname`,
-                             `middlename`,
-                             `lastname`)
+                               `firstname`,
+                               `middlename`,
+                               `lastname`,
+                               `age`)
              VALUES         (NULL, 
-                             '". $_POST["voornaam"] . "', 
-                             '".$_POST["tussenvoegsel"]."', 
-                             '".$_POST["achternaam"]."');";
+                             '" . $_POST["voornaam"] . "', 
+                             '" . $_POST["tussenvoegsel"] . "', 
+                             '" . $_POST["achternaam"]. "',
+                             " . $_POST["leeftijd"] .");";
 
-  echo $sql;
+  //echo $sql;
 
   mysqli_query($conn, $sql);
 
   //header("Location: ./index.php");
+  echo "De ingevoerde gegevens zijn opgeslagen in de database";
 
-  header("Refresh:4; url=./index.php");
+  header("Refresh:2; url=./index.php");
   
 ?>

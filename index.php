@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>CRUD met PHP</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -125,7 +125,13 @@
         $table_data = "";
         while ($record = mysqli_fetch_assoc($result)) {
           //var_dump($record);
-          $table_data = $table_data . $record['firstname'] . "<br>";
+          $table_data = $table_data . "<tr>
+                                          <td>" . $record['id'] . "</td>
+                                          <td>" . $record["firstname"]. "</td>
+                                          <td>" . $record["middlename"] . "</td>
+                                          <td>" . $record["lastname"] . "</td>
+                                          <td>" . $record["age"] . "</td>
+                                       </tr>";
         }
 
       ?>
@@ -134,6 +140,7 @@
         voornaam: <input type="text" name="voornaam"><br>
         tussenvoegsel: <input type="text" name="tussenvoegsel"><br>
         achternaam: <input type="text" name="achternaam"><br>
+        leeftijd: <input type="number" name="leeftijd" min="0" max="600"><br>
         haarkleur <select name="haarkleur">
                     <option value="blond">blond haar</option>
                     <option value="grijs">grijs haar</option>
@@ -152,6 +159,7 @@
             <th>voornaam</th>
             <th>tussenvoegsel</th>
             <th>achternaam</th>
+            <th>leeftijd</th>
           </tr>
         </thead>
         <tbody>
