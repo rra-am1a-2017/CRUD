@@ -131,6 +131,16 @@
                                           <td>" . $record["middlename"] . "</td>
                                           <td>" . $record["lastname"] . "</td>
                                           <td>" . $record["age"] . "</td>
+                                          <td>
+                                            <a href='./update.php?id=" . $record["id"] . "'>
+                                              <img src='./img/edit.png' alt='wijzig record'>
+                                            </a>
+                                          </td>
+                                          <td>
+                                            <a href='./delete.php?id=" . $record["id"] . "'>
+                                              <img src='./img/drop.png' alt='delete record'>
+                                            </a>
+                                          </td>
                                        </tr>";
         }
 
@@ -160,6 +170,8 @@
             <th>tussenvoegsel</th>
             <th>achternaam</th>
             <th>leeftijd</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
