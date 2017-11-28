@@ -32,23 +32,38 @@
             <input type="text" name="tussenvoegsel" id="tussenvoegselId" class="form-control">       
           </div>
 
+          <div class="form-group">
+            <label for="achternaamId">achternaam:</label>
+            <input type="text" name="achternaam" id="achternaamId" class="form-control">            
+          </div>
 
+          <div class="form-group">
+            <label for="leeftijdId">leeftijd:</label>
+            <input type="number" name="leeftijd" min="0" max="600" id="leeftijdId" class="form-control">            
+          </div>
 
-              achternaam: <input type="text" name="achternaam"><br>
-              leeftijd: <input type="number" name="leeftijd" min="0" max="600"><br>
-              haarkleur <select name="haarkleur">
-                          <option value="blond">blond haar</option>
-                          <option value="grijs">grijs haar</option>
-                          <option value="bruin">bruin haar</option>
-                        </select><br>
-              wachtwoord: <input type="password" name="wachtwoord"> <br>    
-              <input type="submit"><br>
+          <div class="form-group">
+            <label for="haarkleurId">haarkleur:</label>
+            <select name="haarkleur" id="haarkleurId"  class="form-control custom-select">
+              <option value="blond">blond haar</option>
+              <option value="grijs">grijs haar</option>
+              <option value="bruin">bruin haar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="wachtwoordId">wachtwoord:</label>
+           <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control">               
+          </div>
+          <button type="submit" class="btn btn-primary">wijzig!</button>
         </form>
 
       
       </div>
       <div class="col-3"></div>
     </div>
+
+    
 
 
     
