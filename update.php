@@ -1,5 +1,26 @@
 <?php
   echo $_GET["id"];
+
+  // Opdracht zelf doen haal het record uit de database
+
+  // We gaan contact maken in de code met de mysql database
+  $server_name = "localhost";
+  $user_name = "root";
+  $password = "";
+  $database_name = "am1a_2017_blok2_crud";
+  
+  // Met deze functie maken we contact met de mysql server
+  $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+
+  // We maken een select query die een record met een specifiek id selecteerd
+  $sql = "SELECT * FROM `users` WHERE `id` = " . $_GET["id"];
+
+  $result = mysqli_query($conn,$sql);
+
+  $record = mysqli_fetch_assoc($result);
+
+  var_dump($record);
+
 ?>
 
 <!doctype html>
@@ -24,22 +45,40 @@
 
           <div class="form-group">
             <label for="voornaamId">voornaam:</label>
-            <input type="text" name="voornaam" id="voornaamId" class="form-control">         
+            <input type="text" 
+                   name="voornaam" 
+                   id="voornaamId" 
+                   class="form-control" 
+                   value="<?php echo $record["firstname"]; ?>">         
           </div>
 
           <div class="form-group">
             <label for="tussenvoegselId">tussenvoegsel:</label>
-            <input type="text" name="tussenvoegsel" id="tussenvoegselId" class="form-control">       
+            <input type="text" 
+                   name="tussenvoegsel" 
+                   id="tussenvoegselId" 
+                   class="form-control" 
+                   value="<?php echo $record["middlename"]; ?>">       
           </div>
 
           <div class="form-group">
             <label for="achternaamId">achternaam:</label>
-            <input type="text" name="achternaam" id="achternaamId" class="form-control">            
+            <input type="text" 
+                   name="achternaam" 
+                   id="achternaamId" 
+                   class="form-control"
+                   value="<?php echo $record["lastname"]; ?>">            
           </div>
 
           <div class="form-group">
             <label for="leeftijdId">leeftijd:</label>
-            <input type="number" name="leeftijd" min="0" max="600" id="leeftijdId" class="form-control">            
+            <input type="number" 
+                   name="leeftijd" 
+                   min="0" 
+                   max="600" 
+                   id="leeftijdId" 
+                   class="form-control"
+                   value="<?php echo $record["age"]; ?>">            
           </div>
 
           <div class="form-group">
