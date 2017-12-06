@@ -1,5 +1,5 @@
 <?php
-  echo $_GET["id"];
+  // echo $_GET["id"];
 
   // Opdracht zelf doen haal het record uit de database
 
@@ -19,7 +19,7 @@
 
   $record = mysqli_fetch_assoc($result);
 
-  var_dump($record);
+  // var_dump($record);
 
 ?>
 
@@ -41,24 +41,24 @@
       <div class="col-3"></div>
       <div class="col-6">
         <h1>Wijzig het record</h1>
-        <form method="post" action="./update.php">
-
+        <form method="post" action="./update_record.php">
+          <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
           <div class="form-group">
             <label for="voornaamId">voornaam:</label>
-            <input type="text" 
+            <input type="text"
                    name="voornaam" 
                    id="voornaamId" 
-                   class="form-control" 
-                   value="<?php echo $record["firstname"]; ?>">         
+                   class="form-control"
+                   value="<?php echo $record['firstname']; ?>">         
           </div>
 
           <div class="form-group">
             <label for="tussenvoegselId">tussenvoegsel:</label>
             <input type="text" 
                    name="tussenvoegsel" 
-                   id="tussenvoegselId" 
-                   class="form-control" 
-                   value="<?php echo $record["middlename"]; ?>">       
+                   id="tussenvoegselId"  
+                   class="form-control"
+                   value="<?php echo $record['middlename']; ?>">       
           </div>
 
           <div class="form-group">
@@ -67,7 +67,7 @@
                    name="achternaam" 
                    id="achternaamId" 
                    class="form-control"
-                   value="<?php echo $record["lastname"]; ?>">            
+                   value="<?php echo $record['lastname']; ?>">            
           </div>
 
           <div class="form-group">
@@ -78,9 +78,10 @@
                    max="600" 
                    id="leeftijdId" 
                    class="form-control"
-                   value="<?php echo $record["age"]; ?>">            
+                   value="<?php echo $record['age']; ?>">            
           </div>
 
+          <!--  
           <div class="form-group">
             <label for="haarkleurId">haarkleur:</label>
             <select name="haarkleur" id="haarkleurId"  class="form-control custom-select">
@@ -94,6 +95,9 @@
             <label for="wachtwoordId">wachtwoord:</label>
            <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control">               
           </div>
+
+          -->
+
           <button type="submit" class="btn btn-primary">wijzig!</button>
         </form>
 
