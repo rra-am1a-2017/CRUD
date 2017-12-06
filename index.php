@@ -104,15 +104,9 @@
       ?>
 
       <?php
-        // We gaan contact maken in de code met de mysql database
-        $server_name = "localhost";
-        $user_name = "root";
-        $password = "";
-        $database_name = "am1a_2017_blok2_crud";
+        // We maken contact met de mysql-database
+        include("./connect_db.php");
         
-        // Met deze functie maken we contact met de mysql server
-        $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
-
         // We maken een select query
         $sql = "SELECT * FROM `users`";
 

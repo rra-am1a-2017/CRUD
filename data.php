@@ -9,13 +9,16 @@
   // Echo onderstaande query naar het browserscherm 
 
   // We gaan contact maken in de code met de mysql database
-  $server_name = "localhost";
-  $user_name = "root";
-  $password = "";
-  $database_name = "am1a_2017_blok2_crud";
-  
-  // Met deze functie maken we contact met de mysql server
-  $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+  include("./connect_db.php");
+
+  function sanatize($name) {
+    $output = "Mijn voornaam is: " . $name;
+    echo "Hoi";
+    return $output;
+  }
+
+  $naam = "Bert";
+  echo sanatize($_POST["tussenvoegsel"]);
 
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
   $sql = "INSERT INTO `users` (`id`,
@@ -29,7 +32,7 @@
                              '" . $_POST["achternaam"]. "',
                              " . $_POST["leeftijd"] .");";
 
-  //echo $sql;
+  //echo $sql; exit();
 
   mysqli_query($conn, $sql);
 
