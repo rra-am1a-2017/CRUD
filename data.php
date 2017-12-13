@@ -1,24 +1,12 @@
 <?php
-  // echo "Hoi";
-  // var_dump($_POST);
-  // echo "Mijn voornaam is: " . $_POST["voornaam"] . " " . $_POST["tussenvoegsel"] . " " . $_POST["achternaam"] . "<br>";
-  // echo "Mijn password is: " . $_POST["wachtwoord"] . "<br>";
-  // echo "Mijn haarkleur is: " .$_POST["haarkleur"] . "<br>"; 
-  // echo "<hr>";
-
-  // Echo onderstaande query naar het browserscherm 
-
   // We gaan contact maken in de code met de mysql database
   include("./connect_db.php");
+  include("./functions/functions.php");  
 
-  function sanatize($name) {
-    $output = "Mijn voornaam is: " . $name;
-    echo "Hoi";
-    return $output;
-  }
-
-  $naam = "Bert";
-  echo sanatize($_POST["tussenvoegsel"]);
+  $voornaam       = sanitize($_POST["voornaam"]);
+  $tussenvoegsel  = sanitize($_POST["tussenvoegsel"]);
+  $achternaam     = sanitize($_POST["achternaam"]);
+  $leeftijd       = sanitize($_POST["leeftijd"]);
 
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
   $sql = "INSERT INTO `users` (`id`,
@@ -27,10 +15,10 @@
                                `lastname`,
                                `age`)
              VALUES         (NULL, 
-                             '" . $_POST["voornaam"] . "', 
-                             '" . $_POST["tussenvoegsel"] . "', 
-                             '" . $_POST["achternaam"]. "',
-                             " . $_POST["leeftijd"] .");";
+                             '" . $voornaam ."', 
+                             '" . $tussenvoegsel . "', 
+                             '" . $achternaam . "',
+                             " . $leeftijd .");";
 
   //echo $sql; exit();
 

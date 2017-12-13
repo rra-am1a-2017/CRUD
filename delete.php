@@ -6,6 +6,7 @@
   $sql = "DELETE FROM `users` 
                 WHERE `id` = " . $_GET["id"];
 
+  // echo $sql; exit();
   // Vuur de sql-query af op de mysql-database
   $result = mysqli_query($conn,$sql);
 
