@@ -1,17 +1,22 @@
 <?php
-  // echo $_GET["id"];
-  // Opdracht zelf doen haal het record uit de database
-  // We gaan contact maken in de code met de mysql database
-  include("./connect_db.php");
+  // Voorkom sql-injection door te checken of $_GET["id"] een getal is
+  if ( is_numeric($_GET["id"])) {
+    // echo $_GET["id"];
+    // Opdracht zelf doen haal het record uit de database
+    // We gaan contact maken in de code met de mysql database
+    include("./connect_db.php");
 
-  // We maken een select query die een record met een specifiek id selecteerd
-  $sql = "SELECT * FROM `users` WHERE `id` = " . $_GET["id"];
+    // We maken een select query die een record met een specifiek id selecteerd
+    $sql = "SELECT * FROM `users` WHERE `id` = " . $_GET["id"];
 
-  $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($conn,$sql);
 
-  $record = mysqli_fetch_assoc($result);
+    $record = mysqli_fetch_assoc($result);
 
-  // var_dump($record);
+    // var_dump($record);
+  } else {
+    header("Location: ./index.php");
+  }
 
 ?>
 
