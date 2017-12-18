@@ -8,11 +8,6 @@
   $achternaam     = sanitize($_POST["achternaam"]);
   $leeftijd       = sanitize($_POST["leeftijd"]);
 
-  echo $_POST["wachtwoord"];
-  echo "<hr>";
-  echo sha1($_POST["wachtwoord"]);
-  exit();
-
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
   $sql = "INSERT INTO `users` (`id`,
                                `firstname`,
@@ -24,12 +19,14 @@
                              '" . $tussenvoegsel . "', 
                              '" . $achternaam . "',
                              " . $leeftijd .");";
-
-  // echo $sql; exit();
+  
+  //echo $sql; exit();
 
   mysqli_query($conn, $sql);
 
   header("Location: ./index.php");
+  
+  
   //echo "De ingevoerde gegevens zijn opgeslagen in de database";
 
   //header("Refresh:2; url=./index.php");
