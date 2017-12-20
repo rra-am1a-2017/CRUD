@@ -35,6 +35,7 @@
                                           <td>" . $record["middlename"] . "</td>
                                           <td>" . $record["lastname"] . "</td>
                                           <td>" . $record["age"] . "</td>
+                                          <td>" . $record["haircolor"] . "</td>
                                           <td>
                                             <a href='./update.php?id=" . $record["id"] . "'>
                                               <img src='./img/edit.png' alt='wijzig record'>
@@ -75,6 +76,7 @@
             <th>tussenvoegsel</th>
             <th>achternaam</th>
             <th>leeftijd</th>
+            <th>haarkleur</th>
             <th></th>
             <th></th>
           </tr>

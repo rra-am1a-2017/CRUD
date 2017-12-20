@@ -78,13 +78,14 @@
                    value="<?php echo $record['age']; ?>">            
           </div>
 
-          <!--  
+           
           <div class="form-group">
             <label for="haarkleurId">haarkleur:</label>
             <select name="haarkleur" id="haarkleurId"  class="form-control custom-select">
-              <option value="blond">blond haar</option>
-              <option value="grijs">grijs haar</option>
-              <option value="bruin">bruin haar</option>
+              <option value="default" <?php if ($record["haircolor"] == "default") { echo "selected";} ?>>--kies een haarkleur</option>            
+              <option value="blond" <?php if ($record["haircolor"] == "blond") { echo "selected";} ?>>blond haar</option>
+              <option value="grijs" <?php if ($record["haircolor"] == "grijs") { echo "selected";} ?>>grijs haar</option>
+              <option value="bruin" <?php if ($record["haircolor"] == "bruin") { echo "selected";} ?>>bruin haar</option>
             </select>
           </div>
 
@@ -93,7 +94,7 @@
            <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control">               
           </div>
 
-          -->
+         
 
           <button type="submit" class="btn btn-primary">wijzig!</button>
         </form>
