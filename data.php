@@ -7,20 +7,26 @@
   $tussenvoegsel  = sanitize($_POST["tussenvoegsel"]);
   $achternaam     = sanitize($_POST["achternaam"]);
   $leeftijd       = sanitize($_POST["leeftijd"]);
+  $wachtwoord     = sha1(sanitize($_POST["wachtwoord"]));
+  $haarkleur      = sanitize($_POST["haarkleur"]);
 
   // Dit is de query die de ingevulde gegevens kan wegschrijven naar de tabel users
   $sql = "INSERT INTO `users` (`id`,
                                `firstname`,
                                `middlename`,
                                `lastname`,
-                               `age`)
+                               `age`,
+                               `password`,
+                               `haircolor`)
              VALUES         (NULL, 
                              '" . $voornaam ."', 
                              '" . $tussenvoegsel . "', 
                              '" . $achternaam . "',
-                             " . $leeftijd .");";
+                             "  . $leeftijd .",
+                             '" . $wachtwoord . "',
+                             '" . $haarkleur . "');";
   
-  //echo $sql; exit();
+  // echo $sql; exit();
 
   mysqli_query($conn, $sql);
 

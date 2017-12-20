@@ -56,6 +56,7 @@
         achternaam: <input type="text" name="achternaam"><br>
         leeftijd: <input type="number" name="leeftijd" min="0" max="600"><br>
         haarkleur <select name="haarkleur">
+                    <option value="default">--kies haarkleur--</option>                    
                     <option value="blond">blond haar</option>
                     <option value="grijs">grijs haar</option>
                     <option value="bruin">bruin haar</option>
