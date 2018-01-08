@@ -52,18 +52,67 @@
       ?>
       
       <form method="post" action="./data.php">
-        voornaam: <input type="text" name="voornaam"><br>
-        tussenvoegsel: <input type="text" name="tussenvoegsel"><br>
-        achternaam: <input type="text" name="achternaam"><br>
-        leeftijd: <input type="number" name="leeftijd" min="0" max="600"><br>
-        haarkleur <select name="haarkleur">
-                    <option value="default">--kies haarkleur--</option>                    
-                    <option value="blond">blond haar</option>
-                    <option value="grijs">grijs haar</option>
-                    <option value="bruin">bruin haar</option>
-                  </select><br>
-        wachtwoord: <input type="password" name="wachtwoord"> <br>    
-        <input type="submit"><br>
+          <div class="form-group">
+            <label for="voornaamId">voornaam:</label>
+            <input type="text"
+                   name="voornaam" 
+                   id="voornaamId" 
+                   class="form-control"
+                   value="<?php echo $record['firstname']; ?>"
+                   required>         
+          </div>
+
+          <div class="form-group">
+            <label for="tussenvoegselId">tussenvoegsel:</label>
+            <input type="text" 
+                   name="tussenvoegsel" 
+                   id="tussenvoegselId"  
+                   class="form-control"
+                   value="<?php echo $record['middlename']; ?>"
+                   required>       
+          </div>
+
+          <div class="form-group">
+            <label for="achternaamId">achternaam:</label>
+            <input type="text" 
+                   name="achternaam" 
+                   id="achternaamId" 
+                   class="form-control"
+                   value="<?php echo $record['lastname']; ?>"
+                   required>            
+          </div>
+
+          <div class="form-group">
+            <label for="leeftijdId">leeftijd:</label>
+            <input type="number" 
+                   name="leeftijd" 
+                   min="0" 
+                   max="600" 
+                   id="leeftijdId" 
+                   class="form-control"
+                   value="<?php echo $record['age']; ?>"
+                   required>            
+          </div>
+
+           
+          <div class="form-group">
+            <label for="haarkleurId">haarkleur:</label>
+            <select name="haarkleur" id="haarkleurId"  class="form-control custom-select" required>
+              <option value="">--kies een haarkleur--</option>            
+              <option value="blond">blond haar</option>
+              <option value="grijs">grijs haar</option>
+              <option value="bruin">bruin haar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="wachtwoordId">wachtwoord:</label>
+           <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control" required>               
+          </div>
+
+         
+
+          <button type="submit" class="btn btn-primary btn-large btn-block">Opslaan</button>
       </form>
 
       <hr> 

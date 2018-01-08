@@ -81,8 +81,8 @@
            
           <div class="form-group">
             <label for="haarkleurId">haarkleur:</label>
-            <select name="haarkleur" id="haarkleurId"  class="form-control custom-select">
-              <option value="default" <?php if ($record["haircolor"] == "default") { echo "selected";} ?>>--kies een haarkleur</option>            
+            <select name="haarkleur" id="haarkleurId"  class="form-control custom-select" required>
+              <option value="default" <?php if ($record["haircolor"] == "default") { echo "selected";} ?>></option>            
               <option value="blond" <?php if ($record["haircolor"] == "blond") { echo "selected";} ?>>blond haar</option>
               <option value="grijs" <?php if ($record["haircolor"] == "grijs") { echo "selected";} ?>>grijs haar</option>
               <option value="bruin" <?php if ($record["haircolor"] == "bruin") { echo "selected";} ?>>bruin haar</option>
@@ -91,7 +91,7 @@
 
           <div class="form-group">
             <label for="wachtwoordId">wachtwoord:</label>
-           <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control">               
+           <input type="password" name="wachtwoord" id="wachtwoordId" class="form-control" required>               
           </div>
 
          
